@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+  google-search-frontend:
+    container_name: google-search-frontend
+    build: .
+    ports:
+      - 3001:3000
+    networks:
+      - google-search
+    env_file:
+      - .env
+
+networks:
+  google-search:
+    external: true
